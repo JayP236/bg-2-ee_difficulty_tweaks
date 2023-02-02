@@ -1,0 +1,18 @@
+DEFINE_ACTION_FUNCTION jp#_extend_top_all_areascripts
+
+  STR_VAR script  = ""
+
+BEGIN
+          
+  COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~ // loop over all area scripts
+    READ_ASCII 0x94 existing_script
+    PATCH_IF ("%existing_script%" STRING_EQUAL_CASE ~~ = 0) BEGIN // if no script assigned yet to the area, add a new one
+      WRITE_ASCIIE 0x94 ~%SOURCE_RES%~
+      READ_ASCII 0x94 existing_script
+    END
+    INNER_ACTION BEGIN
+     EXTEND_TOP ~%existing_script%.bcs~ ~%script%.baf~ EVALUATE_BUFFER
+    END
+  BUT_ONLY
+
+END

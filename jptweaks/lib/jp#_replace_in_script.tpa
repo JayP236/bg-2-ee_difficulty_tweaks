@@ -1,0 +1,16 @@
+DEFINE_ACTION_FUNCTION jp#_replace_in_script
+
+  STR_VAR existing_script = ""
+  		    old   = ""
+		      new = ""
+
+BEGIN
+          
+  COPY_EXISTING_REGEXP GLOB ~%existing_script%.bcs~ ~override~
+    DECOMPILE_AND_PATCH 
+    BEGIN
+      REPLACE_TEXTUALLY CASE_INSENSITIVE ~%old%~ ~%new%~ EVALUATE_BUFFER
+    END
+  BUT_ONLY
+
+END

@@ -1,0 +1,17 @@
+DEFINE_ACTION_FUNCTION jp#_adjust_max_charges
+
+  INT_VAR charges = 1
+  STR_VAR item = ""
+
+BEGIN
+          
+  COPY_EXISTING_REGEXP GLOB ~%item%.itm~ ~override~
+    READ_LONG 0x34 price
+  	READ_LONG 0x64 abilitiesOffset
+	  READ_SHORT ("%abilitiesOffset%" + 0x22) origCharges
+	  WRITE_LONG 0x34 (%price%/%origCharges%)*%charges%
+  	WRITE_SHORT ("%abilitiesOffset%" + 0x22) %charges%
+    WRITE_SHORT ("%abilitiesOffset%" + 0x24) 1 //Set fixed to Item vanishes
+  BUT_ONLY
+
+END

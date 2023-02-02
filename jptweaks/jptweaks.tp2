@@ -1,0 +1,714 @@
+BACKUP ~jptweaks/backup~
+AUTHOR ~jaypee, at http://forum.beamdog.com~
+VERSION ~v0.4~
+
+BEGIN ~Remove Protection from Undead Scrolls~
+SUBCOMPONENT ~Remove Protection Scrolls from Stores~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "scrl09" END
+  BUT_ONLY
+
+BEGIN ~Remove Protection from Undead and Protection from Magic Scrolls~
+SUBCOMPONENT ~Remove Protection Scrolls from Stores~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "scrl07" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "scrl09" END
+  BUT_ONLY
+
+BEGIN ~Remove All Green Protection Scrolls~
+SUBCOMPONENT ~Remove Protection Scrolls from Stores~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "scrl0[3-9]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "scrl15" END
+  BUT_ONLY
+
+BEGIN ~Remove Wands from Stores~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "wand.*" END
+  BUT_ONLY
+
+BEGIN ~Remove Spell Scrolls from Stores~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "scrl1[B-Z]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "scrl[2-Z].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "restore" END //Greater Restoration
+  BUT_ONLY
+
+BEGIN ~Remove All Potions Except Potions of (Extra/Superior) Healing, Antidotes and Elixirs of Health~
+SUBCOMPONENT ~Remove Potions from Stores~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "potn0[^8]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "potn1[^7]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "potn2[^0]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "potn[3-4].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "potn5[^25]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "potn[6-9].*" END
+  BUT_ONLY
+
+BEGIN ~Remove All Potions~
+SUBCOMPONENT ~Remove Potions from Stores~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "potn.*" END
+  BUT_ONLY
+
+BEGIN ~Remove Arrows of Dispelling and Detonation~
+SUBCOMPONENT ~Remove Magical Ammo from Stores~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "arow0[6-7]" END
+  BUT_ONLY
+
+BEGIN ~Remove All Magical Ammo~
+SUBCOMPONENT ~Remove Magical Ammo from Stores~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "arow0[^1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "arow[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bolt0[^1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bolt[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bull0[^1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bull[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "quiver.*" END // Unlimited enchanted ammo
+    //SOD
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdarow.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdbolt.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdbull.*" END
+  BUT_ONLY
+
+BEGIN ~Remove All Magical Ammo and Magical Throwing Weapons~
+SUBCOMPONENT ~Remove Magical Ammo from Stores~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ax1h18" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "arow0[^1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "arow[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bolt0[^1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bolt[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bull0[^1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bull[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "dagg16" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "dart0[^1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "dart[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "quiver.*" END // Unlimited enchanted ammo
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohdart5[01]" END // Dart +2, +3
+    //SOD
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdax1h02" END // Axe of Kruntur +2
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdax1h04" END // Throwing Axe+1
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdarow.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdbolt.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdbull.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bddart.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bddagg0[47]" END // Throwing Dagger +1
+  BUT_ONLY
+
+BEGIN ~Remove Generic (+1, +2...) Enchanted Weapons and Armor from Stores~
+SUBCOMPONENT ~Remove Magical Items from Stores~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+//weapons
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ax1h0[2]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ax1h1[17]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "blun0[357]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "blun1[35]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "blun2[1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "blun3[12346]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bow0[246]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bow1[678]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bow2[456]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "dagg0[2]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "dagg1[5]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "dagg2[4]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "dart0[2]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "halb0[27]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "halb1[2]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "hamm0[28]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "hamm1[2]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "slng0[24]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "slng1[0]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sper0[256]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "staf0[2678]" END // Includes Aule's Staff
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "staf1[89]" END // Includes Cleric's Staff
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "staf2[4]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw1h0[2589].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw1h1[4]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw1h2[29]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw1h4[12479]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw1h5[5]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw1h7[23456]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw1h9[8]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw2h0[2]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw2h1[1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw2h2[0]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "xbow0[2579]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "xbow1[78]" END
+//armor
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "chan0[2578]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "leat0[257]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "leat1[125]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "plat1[04]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "plat2[3]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "shld0[246].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "shld1[7].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "shld2[89].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "shld3[0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohleat5[0123]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohchan5[0]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohplat5[0]" END
+//SOD
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdleat02" END // Hide Armor +1
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdsw1h23" END // Scimitar +2
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdsw1h24" END // Short sword +2
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohblun5[01]" END // Club +1, +2
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohshld5[01]" END // Buckler +2, +3
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohsw1h.*" END // +2 weapons
+  BUT_ONLY
+
+BEGIN ~Remove All Enchanted Weapons and Armor from Stores~
+SUBCOMPONENT ~Remove Magical Items from Stores~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+//weapons
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ax1h0[^14]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ax1h[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "blun0[^12468]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "blun[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bow0[^135]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bow[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "dagg0[^15]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "dagg2[^5].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "dagg[^02].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "dart0[^1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "dart[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "halb0[^1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "halb[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "hamm0[^1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "hamm[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "slng0[^1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "slng[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sper0[^1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sper[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "staf0[^134]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "staf[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw1h0[^147]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw1h1.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw1h2[^01]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw1h3.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw1h4[^368]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw1h[5679].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw2h0[^1].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw2h[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "xbow0[^14]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "xbow[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "misc75" END // Dagger of Venom
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "wa[^n2].*" END // Bonus merchant stuff
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "wan[^d].*" END // not wands
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "wa2dak" END // Dak'kon Zerth Blade
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "wa2halb" END // Harmonium Halberd
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "wa2helm" END // Vhailor's Helm
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "wa2plat" END // Plate of Balduran
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "wa2shiel" END // Shield of Balduran
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "wa2s1h" END // Sword of Balduran
+//armor
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "chan0[^14]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "chan[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "leat0[^14]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "leat1[^0]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "leat[^01].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "plat0[^147]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "plat[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "shld0[^13589].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "shld1[^01234568].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "shld2.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "shld3[^2].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohleat5[0123]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohchan5[0]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohplat5[0]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohbshld[1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "helm0[234567]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "helm1[467]" END
+//SOD
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdax1h.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdblun.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdbow.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bddagg.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bddart.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdhalb.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdhamm.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdslng.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdsper.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdstaf.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdsw1h.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdsw2h.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdxbow.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdchan.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdhelm.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdleat.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdplat.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdshld.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohblun5[01]" END // Club +1, +2
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohshld5[01]" END // Buckler +2, +3
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohsw1h.*" END // +2 weapons
+  BUT_ONLY
+
+
+BEGIN ~Remove All Magical Items from Stores~
+SUBCOMPONENT ~Remove Magical Items from Stores~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+//weapons
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ax1h0[^14]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ax1h[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "blun0[^12468]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "blun[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bow0[^135]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bow[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "dagg0[^15]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "dagg2[^5].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "dagg[^02].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "dart0[^1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "dart[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "halb0[^1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "halb[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "hamm0[^1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "hamm[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "slng0[^1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "slng[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sper0[^1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sper[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "staf0[^134]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "staf[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw1h0[^147]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw1h1.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw1h2[^01]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw1h3.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw1h4[^368]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw1h[5679].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw2h0[^1].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "sw2h[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "xbow0[^14]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "xbow[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "misc75" END // Dagger of Venom
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "wa[^n].*" END // Bonus merchant stuff
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "wan[^d].*" END // not wands
+//armor etc
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "amul0[1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "amul1[456789]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "amul2.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "belt0[^1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "belt[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "boot0[^6]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "boot[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "brac0[^5]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "brac[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "chan0[^14]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "chan[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "clck.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "helm0[^189]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "helm1[^01235]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "helm[23].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "leat0[^14]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "leat1[^0]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "leat[^01].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "plat0[^147]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "plat[^0].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ring0[23456789]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ring[^019].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "shld0[^13589].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "shld1[^01234568].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "shld2.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "shld3[^2].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohleat5[0123]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohchan5[0]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohplat5[0]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohbshld[1]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "helm0[234567]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "helm1[467]" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "misc2p" END // The Captive Audience
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "misc72" END // The Claw of Kazgaroth
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "misc73" END // The Horn of Kazgaroth
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "quiver.*" END // Unlimited enchanted ammo
+    //SOD
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdax1h.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdblun.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdbow.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bddagg.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bddart.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdhalb.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdhamm.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdslng.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdsper.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdstaf.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdsw1h.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdsw2h.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdxbow.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdamul.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdbelt.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdboot.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdbrac.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdbrd0.*" END // Flutes/Bagpipes
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdchan.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdhelm.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdleat.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdplat.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdring.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "bdshld.*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohblun5[01]" END // Club +1, +2
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohshld5[01]" END // Buckler +2, +3
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohsw1h.*" END // +2 weapons
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "wa2amu" END // Sensate Amulet
+    //BG2
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "rods.*" END // Rods
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "misc3p" END // Glasses of Identification
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "misc3m" END // Harp of Discord
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "misc3n" END // Azlaer's Harp
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "misc3o" END // Methild's Harp
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohnrobe3" END // Tunic of Blindeye
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ohbclck1" END // Cloak of the Lich
+  BUT_ONLY
+
+BEGIN ~Make Unlimited Supply of Items Limited~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+  	READ_LONG 0x34 iOffset
+  	READ_LONG 0x38 iCount
+    FOR (i = ("%iCount%" - 1) ; i >= 0 ; i -= 1) BEGIN
+      // Read item unlimited supply
+      READ_LONG ("%iOffset%" + ("%i%" * 0x1C) + 0x18) iUnlimitedSupply
+      PATCH_IF ("%iUnlimitedSupply%" > 0) THEN BEGIN
+        WRITE_LONG ("%iOffset%" + ("%i%" * 0x1C) + 0x18) (0)
+        WRITE_LONG ("%iOffset%" + ("%i%" * 0x1C) + 0x14) (10)//Set to 10 items default
+      END
+    END
+  BUT_ONLY
+
+BEGIN ~Decrease by Factor 2~
+SUBCOMPONENT ~Decrease Amount of Items in Stock~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+  	READ_LONG 0x34 iOffset
+  	READ_LONG 0x38 iCount
+    FOR (i = ("%iCount%" - 1) ; i >= 0 ; i -= 1) BEGIN
+      // Read item instock
+      READ_LONG ("%iOffset%" + ("%i%" * 0x1C) + 0x14) iStock
+      PATCH_IF ("%iStock%" > 0) THEN BEGIN
+        WRITE_LONG ("%iOffset%" + ("%i%" * 0x1C) + 0x14) ("%iStock%" / 2)
+        // ReRead item instock
+        READ_LONG ("%iOffset%" + ("%i%" * 0x1C) + 0x14) iStock
+        PATCH_IF ("%iStock%" == 0) THEN BEGIN
+        WRITE_LONG ("%iOffset%" + ("%i%" * 0x1C) + 0x14) (1) //Set to 1 if no items left
+        END
+      END
+    END
+  BUT_ONLY
+
+BEGIN ~Decrease by Factor 5~
+SUBCOMPONENT ~Decrease Amount of Items in Stock~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+  	READ_LONG 0x34 iOffset
+  	READ_LONG 0x38 iCount
+    FOR (i = ("%iCount%" - 1) ; i >= 0 ; i -= 1) BEGIN
+      // Read item instock
+      READ_LONG ("%iOffset%" + ("%i%" * 0x1C) + 0x14) iStock
+      PATCH_IF ("%iStock%" > 0) THEN BEGIN
+        WRITE_LONG ("%iOffset%" + ("%i%" * 0x1C) + 0x14) ("%iStock%" / 5)
+        // ReRead item instock
+        READ_LONG ("%iOffset%" + ("%i%" * 0x1C) + 0x14) iStock
+        PATCH_IF ("%iStock%" == 0) THEN BEGIN
+        WRITE_LONG ("%iOffset%" + ("%i%" * 0x1C) + 0x14) (1) //Set to 1 if no items left
+        END
+      END
+    END
+  BUT_ONLY
+
+
+BEGIN ~Decrease by Factor 10~
+SUBCOMPONENT ~Decrease Amount of Items in Stock~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+  	READ_LONG 0x34 iOffset
+  	READ_LONG 0x38 iCount
+    FOR (i = ("%iCount%" - 1) ; i >= 0 ; i -= 1) BEGIN
+      // Read item instock
+      READ_LONG ("%iOffset%" + ("%i%" * 0x1C) + 0x14) iStock
+      PATCH_IF ("%iStock%" > 0) THEN BEGIN
+        WRITE_LONG ("%iOffset%" + ("%i%" * 0x1C) + 0x14) ("%iStock%" / 10)
+        // ReRead item instock
+        READ_LONG ("%iOffset%" + ("%i%" * 0x1C) + 0x14) iStock
+        PATCH_IF ("%iStock%" == 0) THEN BEGIN
+        WRITE_LONG ("%iOffset%" + ("%i%" * 0x1C) + 0x14) (1) //Set to 1 if no items left
+        END
+      END
+    END
+  BUT_ONLY
+
+BEGIN ~Increase by 50%~
+SUBCOMPONENT ~Increase Store Sell Markup~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+	  READ_LONG 0x14 markup
+	  WRITE_LONG 0x14 markup+(markup/2)
+  BUT_ONLY
+
+BEGIN ~Increase by 100%~
+SUBCOMPONENT ~Increase Store Sell Markup~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+	  READ_LONG 0x14 markup
+	  WRITE_LONG 0x14 markup*2
+  BUT_ONLY
+
+BEGIN ~Increase by 200%~
+SUBCOMPONENT ~Increase Store Sell Markup~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+	  READ_LONG 0x14 markup
+	  WRITE_LONG 0x14 markup*3
+  BUT_ONLY
+
+BEGIN ~Remove All Items except Item Containers~
+SUBCOMPONENT ~Remove All Items from Stores~
+GROUP ~Hardcore Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "[^b].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "b[^a].*" END
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ba[^g].*" END
+  BUT_ONLY
+
+BEGIN ~Remove All Items~
+SUBCOMPONENT ~Remove All Items from Stores~
+GROUP ~Hardcore Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = ".*" END
+  BUT_ONLY
+
+BEGIN ~No Recharging of Items with Limited Charges~
+GROUP ~Hardcore Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ~.*\.itm$~ ~override~
+    SET charges = 1  
+    READ_LONG 0x34 price
+    READ_LONG 0x64 abilitiesOffset
+    READ_SHORT 0x68 abilitiesCount
+      FOR (counter = 0 ; counter < "%abilitiesCount%" ; counter += 1) BEGIN
+        READ_SHORT ("%abilitiesOffset%" + ("%counter%" * 0x38) + 0x22) origCharges
+        READ_SHORT ("%abilitiesOffset%" + ("%counter%" * 0x38) + 0x24) whenDrained
+        READ_LONG ("%abilitiesOffset%" + ("%counter%" * 0x38) + 0x26) flags
+        PATCH_IF whenDrained == 1 AND origCharges > 1 BEGIN // Item vanishes and has more than one charge
+          WRITE_LONG 0x34 (%price%/%origCharges%)*%charges%     //Update price
+          WRITE_SHORT ("%abilitiesOffset%" + ("%counter%" * 0x38) + 0x22) %charges%    //Update charges
+        END
+        PATCH_IF whenDrained == 3 AND origCharges > 1 AND ((flags BAND BIT11) == 0) BEGIN // Item recharges but does not recharge after resting
+          WRITE_LONG 0x34 (%price%/%origCharges%)*%charges%     //Update price
+          WRITE_SHORT ("%abilitiesOffset%" + ("%counter%" * 0x38) + 0x22) %charges%    //Update charges
+          WRITE_SHORT ("%abilitiesOffset%" + ("%counter%" * 0x38) + 0x24) 1 //Set fixed to Item vanishes
+        END
+      END
+  BUT_ONLY
+
+BEGIN ~No Traveling during Combat~
+GROUP ~Hardcore Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+INCLUDE ~jptweaks/lib/jp#_extend_top_all_areascripts.tpa~
+LAF jp#_extend_top_all_areascripts STR_VAR script = ~jptweaks/baf/jp#_no_combat_travel~ END
+
+BEGIN ~No Wild Camping in Dungeons~
+SUBCOMPONENT ~No Wild Camping~
+GROUP ~Hardcore Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+    COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
+        READ_SHORT 0x048 location
+        PATCH_IF (location BAND BIT5) > 0 BEGIN //Dungeon
+          READ_LONG 0x0c0 rest_offset
+          PATCH_IF rest_offset AND (SOURCE_SIZE > rest_offset) BEGIN // check for rest spawn
+            READ_SHORT (rest_offset + 0xa6) active
+            PATCH_IF active BEGIN // spawn is active
+              PATCH_FOR_EACH offset IN 0xa8 0xaa BEGIN
+                WRITE_SHORT rest_offset + offset 100 // set probability to 100
+              END 
+            END 
+          END
+        END
+      BUT_ONLY
+
+BEGIN ~No Wild Camping in all Areas~
+SUBCOMPONENT ~No Wild Camping~
+GROUP ~Hardcore Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+    COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
+        READ_LONG 0x0c0 rest_offset
+        PATCH_IF rest_offset AND (SOURCE_SIZE > rest_offset) BEGIN // check for rest spawn
+          READ_SHORT (rest_offset + 0xa6) active
+          PATCH_IF active BEGIN // spawn is active
+            PATCH_FOR_EACH offset IN 0xa8 0xaa BEGIN
+              WRITE_SHORT rest_offset + offset 100 // set probability to 100
+            END 
+          END 
+        END
+      BUT_ONLY
+
+
+BEGIN ~Make Potions of Invisibility and the Sandthief's Ring Limited to Thiefs~
+GROUP ~Hardcore Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+COPY_EXISTING ~POTN10.ITM~ ~override~
+  PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+    WRITE_LONG 0x1e THIS BOR BIT6 // remove usability for Bard
+    WRITE_LONG 0x1e THIS BOR BIT7 // remove usability for Cleric
+    WRITE_LONG 0x1e THIS BOR BIT8 // remove usability for Cleric-Mage
+    WRITE_LONG 0x1e THIS BOR BIT10 // remove usability for Cleric-Ranger
+    WRITE_LONG 0x1e THIS BOR BIT11 // remove usability for Fighter
+    WRITE_LONG 0x1e THIS BOR BIT12 // remove usability for Fighter-Druid
+    WRITE_LONG 0x1e THIS BOR BIT13 // remove usability for Fighter-Mage
+    WRITE_LONG 0x1e THIS BOR BIT14 // remove usability for Fighter-Cleric
+    WRITE_LONG 0x1e THIS BOR BIT15 // remove usability for Fighter-Mage-Cleric
+    WRITE_LONG 0x1e THIS BOR BIT18 // remove usability for Mage
+    WRITE_LONG 0x1e THIS BOR BIT20 // remove usability for Paladin
+    WRITE_LONG 0x1e THIS BOR BIT21 // remove usability for Ranger
+    WRITE_LONG 0x1e THIS BOR BIT29 // remove usability for Monk
+    WRITE_LONG 0x1e THIS BOR BIT30 // remove usability for Druid
+    WRITE_LONG 0x29 THIS BOR BIT6 // remove usability for Barbarian
+    WRITE_LONG 0x2f THIS BOR BIT1 // remove usability for Wizard slayer
+    WRITE_LONG 0x2f THIS BOR BIT2 // remove usability for Kensai
+  END
+BUT_ONLY
+
+COPY_EXISTING ~RING05.ITM~ ~override~
+  PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+    WRITE_LONG 0x1e THIS BOR BIT6 // remove usability for Bard
+    WRITE_LONG 0x1e THIS BOR BIT7 // remove usability for Cleric
+    WRITE_LONG 0x1e THIS BOR BIT8 // remove usability for Cleric-Mage
+    WRITE_LONG 0x1e THIS BOR BIT10 // remove usability for Cleric-Ranger
+    WRITE_LONG 0x1e THIS BOR BIT11 // remove usability for Fighter
+    WRITE_LONG 0x1e THIS BOR BIT12 // remove usability for Fighter-Druid
+    WRITE_LONG 0x1e THIS BOR BIT13 // remove usability for Fighter-Mage
+    WRITE_LONG 0x1e THIS BOR BIT14 // remove usability for Fighter-Cleric
+    WRITE_LONG 0x1e THIS BOR BIT15 // remove usability for Fighter-Mage-Cleric
+    WRITE_LONG 0x1e THIS BOR BIT18 // remove usability for Mage
+    WRITE_LONG 0x1e THIS BOR BIT20 // remove usability for Paladin
+    WRITE_LONG 0x1e THIS BOR BIT21 // remove usability for Ranger
+    WRITE_LONG 0x1e THIS BOR BIT29 // remove usability for Monk
+    WRITE_LONG 0x1e THIS BOR BIT30 // remove usability for Druid
+    WRITE_LONG 0x29 THIS BOR BIT6 // remove usability for Barbarian
+    WRITE_LONG 0x2f THIS BOR BIT1 // remove usability for Wizard slayer
+    WRITE_LONG 0x2f THIS BOR BIT2 // remove usability for Kensai
+  END
+BUT_ONLY
+
+BEGIN ~Make Drizzt's Items Unobtainable~
+GROUP ~Hardcore Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee~
+~This component is only for BG:EE!~
+
+COPY_EXISTING ~drizzt.cre~ ~override~
+  READ_LONG 0x02BC "itemsOffset"
+  READ_LONG 0x02C0 "itemsCount"
+  FOR (counter = 0 ; counter < "%itemsCount%" ; counter += 1) BEGIN
+	  WRITE_LONG ("%itemsOffset%" + ("%counter%" * 0x14) + 0x10) THIS BOR BIT1 // not stealable
+	  WRITE_LONG ("%itemsOffset%" + ("%counter%" * 0x14) + 0x10) THIS BOR BIT3 // undroppable
+  END
+  BUT_ONLY
+
+BEGIN ~Make Korax the Ghoul Turn Hostile if Injured~
+GROUP ~Hardcore Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee~
+~This component is only for BG:EE!~
+
+INCLUDE ~jptweaks/lib/jp#_replace_in_script.tpa~
+LAF jp#_replace_in_script STR_VAR existing_script = ~korax~ old = ~GlobalTimerExpired("KoraxHostile","GLOBAL")~ new = ~OR(2) GlobalTimerExpired("KoraxHostile","GLOBAL") HPPercentLT(Myself,100)~ END
+
+BEGIN ~Block All Companions from Joining the Party~
+GROUP ~Hardcore Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
+~This component is only for BG:EE and BG2:EE!~
+
+  COPY_EXISTING_REGEXP GLOB ~^.+\.dlg$~ ~override~
+    DECOMPILE_AND_PATCH
+    BEGIN
+      //REPLACE_TEXTUALLY ~JoinParty()~ ~EscapeArea()~
+      REPLACE_TEXTUALLY ~JoinParty()~ ~NoAction()~
+    END
+  BUT_ONLY

@@ -1,0 +1,19 @@
+IF
+	ActuallyInCombat()
+	Global("JP#NO_COMBAT_TRAVEL","GLOBAL",0)
+THEN
+	RESPONSE #100
+		AddAreaFlag(NOTRAVEL)
+		SetGlobal("JP#NO_COMBAT_TRAVEL","GLOBAL",1)
+		SetGlobalTimer("JP#NO_COMBAT_TRAVEL_TIMER","GLOBAL",TWO_ROUNDS)
+END
+
+IF
+	!ActuallyInCombat()
+	GlobalTimerExpired("JP#NO_COMBAT_TRAVEL_TIMER","GLOBAL")
+	Global("JP#NO_COMBAT_TRAVEL","GLOBAL",1)
+THEN
+	RESPONSE #100
+		RemoveAreaFlag(NOTRAVEL)
+		SetGlobal("JP#NO_COMBAT_TRAVEL","GLOBAL",0)
+END

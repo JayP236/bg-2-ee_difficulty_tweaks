@@ -1,0 +1,14 @@
+DEFINE_ACTION_FUNCTION jp#_extend_top_script
+
+  STR_VAR existing_script = ""
+  		    script   = ""
+
+BEGIN
+          
+  COPY_EXISTING_REGEXP GLOB ~%existing_script%.bcs~ ~override~
+    INNER_ACTION BEGIN
+     EXTEND_TOP ~%existing_script%.bcs~ ~%script%.baf~ EVALUATE_BUFFER
+    END
+  BUT_ONLY
+
+END
