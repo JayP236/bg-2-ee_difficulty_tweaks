@@ -1,12 +1,12 @@
 BACKUP ~jptweaks/backup~
 AUTHOR ~jaypee, at http://forum.beamdog.com~
-VERSION ~v0.4~
+VERSION ~v0.5~
 
 BEGIN ~Remove Protection from Undead Scrolls~
 SUBCOMPONENT ~Remove Protection Scrolls from Stores~
 GROUP ~Store Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
     LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "scrl09" END
@@ -15,8 +15,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 BEGIN ~Remove Protection from Undead and Protection from Magic Scrolls~
 SUBCOMPONENT ~Remove Protection Scrolls from Stores~
 GROUP ~Store Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
     LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "scrl07" END
@@ -26,8 +26,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 BEGIN ~Remove All Green Protection Scrolls~
 SUBCOMPONENT ~Remove Protection Scrolls from Stores~
 GROUP ~Store Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
     LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "scrl0[3-9]" END
@@ -36,8 +36,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 
 BEGIN ~Remove Wands from Stores~
 GROUP ~Store Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
     LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "wand.*" END
@@ -45,8 +45,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 
 BEGIN ~Remove Spell Scrolls from Stores~
 GROUP ~Store Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
     LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "scrl1[B-Z]" END
@@ -57,8 +57,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 BEGIN ~Remove All Potions Except Potions of (Extra/Superior) Healing, Antidotes and Elixirs of Health~
 SUBCOMPONENT ~Remove Potions from Stores~
 GROUP ~Store Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
     LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "potn0[^8]" END
@@ -72,8 +72,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 BEGIN ~Remove All Potions~
 SUBCOMPONENT ~Remove Potions from Stores~
 GROUP ~Store Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
     LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "potn.*" END
@@ -82,8 +82,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 BEGIN ~Remove Arrows of Dispelling and Detonation~
 SUBCOMPONENT ~Remove Magical Ammo from Stores~
 GROUP ~Store Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
     LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "arow0[6-7]" END
@@ -92,8 +92,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 BEGIN ~Remove All Magical Ammo~
 SUBCOMPONENT ~Remove Magical Ammo from Stores~
 GROUP ~Store Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
     LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "arow0[^1]" END
@@ -112,8 +112,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 BEGIN ~Remove All Magical Ammo and Magical Throwing Weapons~
 SUBCOMPONENT ~Remove Magical Ammo from Stores~
 GROUP ~Store Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
     LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "ax1h18" END
@@ -141,8 +141,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 BEGIN ~Remove Generic (+1, +2...) Enchanted Weapons and Armor from Stores~
 SUBCOMPONENT ~Remove Magical Items from Stores~
 GROUP ~Store Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
 //weapons
@@ -206,8 +206,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 BEGIN ~Remove All Enchanted Weapons and Armor from Stores~
 SUBCOMPONENT ~Remove Magical Items from Stores~
 GROUP ~Store Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
 //weapons
@@ -297,8 +297,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 BEGIN ~Remove All Magical Items from Stores~
 SUBCOMPONENT ~Remove Magical Items from Stores~
 GROUP ~Store Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
 //weapons
@@ -414,8 +414,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 
 BEGIN ~Make Unlimited Supply of Items Limited~
 GROUP ~Store Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
   	READ_LONG 0x34 iOffset
@@ -433,8 +433,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 BEGIN ~Decrease by Factor 2~
 SUBCOMPONENT ~Decrease Amount of Items in Stock~
 GROUP ~Store Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
   	READ_LONG 0x34 iOffset
@@ -456,8 +456,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 BEGIN ~Decrease by Factor 5~
 SUBCOMPONENT ~Decrease Amount of Items in Stock~
 GROUP ~Store Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
   	READ_LONG 0x34 iOffset
@@ -480,8 +480,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 BEGIN ~Decrease by Factor 10~
 SUBCOMPONENT ~Decrease Amount of Items in Stock~
 GROUP ~Store Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
   	READ_LONG 0x34 iOffset
@@ -503,8 +503,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 BEGIN ~Increase by 50%~
 SUBCOMPONENT ~Increase Store Sell Markup~
 GROUP ~Store Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
 	  READ_LONG 0x14 markup
@@ -514,8 +514,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 BEGIN ~Increase by 100%~
 SUBCOMPONENT ~Increase Store Sell Markup~
 GROUP ~Store Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
 	  READ_LONG 0x14 markup
@@ -525,19 +525,196 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 BEGIN ~Increase by 200%~
 SUBCOMPONENT ~Increase Store Sell Markup~
 GROUP ~Store Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
 	  READ_LONG 0x14 markup
 	  WRITE_LONG 0x14 markup*3
   BUT_ONLY
 
+BEGIN ~Increase by 50%~
+SUBCOMPONENT ~Increase Price of Services and Drinks~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+  //Identify
+    // Read price
+    READ_LONG (0x40) iPrice
+    PATCH_IF ("%iPrice%" > 0) THEN BEGIN
+      // Write price
+       WRITE_LONG 0x40 ("%iPrice%" + ("%iPrice%" / 2))
+    END
+  //Drinks
+  	READ_LONG 0x4c iOffset
+  	READ_LONG 0x50 iCount
+    FOR (i = ("%iCount%" - 1) ; i >= 0 ; i -= 1) BEGIN
+      // Read price
+      READ_LONG ("%iOffset%" + ("%i%" * 0x14) + 0x0c) iPrice
+      PATCH_IF ("%iPrice%" > 0) THEN BEGIN
+        // Write price
+        WRITE_LONG ("%iOffset%" + ("%i%" * 0x14) + 0x0c) ("%iPrice%" + ("%iPrice%" / 2))
+      END
+    END
+  //Services
+    READ_LONG 0x70 iOffset
+    READ_LONG 0x74 iCount
+    FOR (i = ("%iCount%" - 1) ; i >= 0 ; i -= 1) BEGIN
+      // Read price
+      READ_LONG ("%iOffset%" + ("%i%" * 0x0c) + 0x08) iPrice
+      PATCH_IF ("%iPrice%" > 0) THEN BEGIN
+        // Write price
+        WRITE_LONG ("%iOffset%" + ("%i%" * 0x0c) + 0x08) ("%iPrice%" + ("%iPrice%" / 2))
+      END
+    END
+  BUT_ONLY
+
+BEGIN ~Increase by 100%~
+SUBCOMPONENT ~Increase Price of Services and Drinks~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+  //Identify
+    // Read price
+    READ_LONG (0x40) iPrice
+    PATCH_IF ("%iPrice%" > 0) THEN BEGIN
+      // Write price
+       WRITE_LONG 0x40 ("%iPrice%" * 2)
+    END
+  //Drinks
+  	READ_LONG 0x4c iOffset
+  	READ_LONG 0x50 iCount
+    FOR (i = ("%iCount%" - 1) ; i >= 0 ; i -= 1) BEGIN
+      // Read price
+      READ_LONG ("%iOffset%" + ("%i%" * 0x14) + 0x0c) iPrice
+      PATCH_IF ("%iPrice%" > 0) THEN BEGIN
+        // Write price
+        WRITE_LONG ("%iOffset%" + ("%i%" * 0x14) + 0x0c) ("%iPrice%" * 2)
+      END
+    END
+  //Services
+    READ_LONG 0x70 iOffset
+    READ_LONG 0x74 iCount
+    FOR (i = ("%iCount%" - 1) ; i >= 0 ; i -= 1) BEGIN
+      // Read price
+      READ_LONG ("%iOffset%" + ("%i%" * 0x0c) + 0x08) iPrice
+      PATCH_IF ("%iPrice%" > 0) THEN BEGIN
+        // Write price
+        WRITE_LONG ("%iOffset%" + ("%i%" * 0x0c) + 0x08) ("%iPrice%" * 2)
+      END
+    END
+  BUT_ONLY
+
+  BEGIN ~Increase by 200%~
+    SUBCOMPONENT ~Increase Price of Services and Drinks~
+    GROUP ~Store Tweaks~
+    REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+    ~This component is only for BG(2):EE and EET!~
+    
+    COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+      //Identify
+        // Read price
+        READ_LONG (0x40) iPrice
+        PATCH_IF ("%iPrice%" > 0) THEN BEGIN
+          // Write price
+           WRITE_LONG 0x40 ("%iPrice%" * 3)
+        END
+      //Drinks
+        READ_LONG 0x4c iOffset
+        READ_LONG 0x50 iCount
+        FOR (i = ("%iCount%" - 1) ; i >= 0 ; i -= 1) BEGIN
+          // Read price
+          READ_LONG ("%iOffset%" + ("%i%" * 0x14) + 0x0c) iPrice
+          PATCH_IF ("%iPrice%" > 0) THEN BEGIN
+            // Write price
+            WRITE_LONG ("%iOffset%" + ("%i%" * 0x14) + 0x0c) ("%iPrice%" * 3)
+          END
+        END
+      //Services
+        READ_LONG 0x70 iOffset
+        READ_LONG 0x74 iCount
+        FOR (i = ("%iCount%" - 1) ; i >= 0 ; i -= 1) BEGIN
+          // Read price
+          READ_LONG ("%iOffset%" + ("%i%" * 0x0c) + 0x08) iPrice
+          PATCH_IF ("%iPrice%" > 0) THEN BEGIN
+            // Write price
+            WRITE_LONG ("%iOffset%" + ("%i%" * 0x0c) + 0x08) ("%iPrice%" * 3)
+          END
+        END
+    BUT_ONLY
+
+BEGIN ~Increase by Factor 10~
+SUBCOMPONENT ~Increase Inn Room Price~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+  //Peasant room
+	  READ_LONG 0x60 iPrice
+	  WRITE_LONG 0x60 iPrice * 10
+  //Merchant room
+	  READ_LONG 0x64 iPrice
+	  WRITE_LONG 0x64 iPrice * 10
+  //Noble room
+	  READ_LONG 0x68 iPrice
+	  WRITE_LONG 0x68 iPrice * 10
+  //Royal room
+	  READ_LONG 0x6c iPrice
+	  WRITE_LONG 0x6c iPrice * 10
+  BUT_ONLY
+
+BEGIN ~Increase by Factor 50~
+SUBCOMPONENT ~Increase Inn Room Price~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+  //Peasant room
+	  READ_LONG 0x60 iPrice
+	  WRITE_LONG 0x60 iPrice * 50
+  //Merchant room
+	  READ_LONG 0x64 iPrice
+	  WRITE_LONG 0x64 iPrice * 50
+  //Noble room
+	  READ_LONG 0x68 iPrice
+	  WRITE_LONG 0x68 iPrice * 50
+  //Royal room
+	  READ_LONG 0x6c iPrice
+	  WRITE_LONG 0x6c iPrice * 50
+  BUT_ONLY
+
+BEGIN ~Increase by Factor 100~
+SUBCOMPONENT ~Increase Inn Room Price~
+GROUP ~Store Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
+
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+  //Peasant room
+	  READ_LONG 0x60 iPrice
+	  WRITE_LONG 0x60 iPrice * 100
+  //Merchant room
+	  READ_LONG 0x64 iPrice
+	  WRITE_LONG 0x64 iPrice * 100
+  //Noble room
+	  READ_LONG 0x68 iPrice
+	  WRITE_LONG 0x68 iPrice * 100
+  //Royal room
+	  READ_LONG 0x6c iPrice
+	  WRITE_LONG 0x6c iPrice * 100
+  BUT_ONLY
+
 BEGIN ~Remove All Items except Item Containers~
 SUBCOMPONENT ~Remove All Items from Stores~
 GROUP ~Hardcore Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
     LPF DELETE_STORE_ITEM STR_VAR item_to_delete = "[^b].*" END
@@ -548,8 +725,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 BEGIN ~Remove All Items~
 SUBCOMPONENT ~Remove All Items from Stores~
 GROUP ~Hardcore Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
     LPF DELETE_STORE_ITEM STR_VAR item_to_delete = ".*" END
@@ -557,8 +734,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 
 BEGIN ~No Recharging of Items with Limited Charges~
 GROUP ~Hardcore Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ~.*\.itm$~ ~override~
     SET charges = 1  
@@ -583,8 +760,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 
 BEGIN ~No Traveling during Combat~
 GROUP ~Hardcore Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
 INCLUDE ~jptweaks/lib/jp#_extend_top_all_areascripts.tpa~
 LAF jp#_extend_top_all_areascripts STR_VAR script = ~jptweaks/baf/jp#_no_combat_travel~ END
@@ -592,8 +769,8 @@ LAF jp#_extend_top_all_areascripts STR_VAR script = ~jptweaks/baf/jp#_no_combat_
 BEGIN ~No Wild Camping in Dungeons~
 SUBCOMPONENT ~No Wild Camping~
 GROUP ~Hardcore Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
     COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
         READ_SHORT 0x048 location
@@ -613,8 +790,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 BEGIN ~No Wild Camping in all Areas~
 SUBCOMPONENT ~No Wild Camping~
 GROUP ~Hardcore Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
     COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
         READ_LONG 0x0c0 rest_offset
@@ -631,8 +808,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
 
 BEGIN ~Make Potions of Invisibility and the Sandthief's Ring Limited to Thiefs~
 GROUP ~Hardcore Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
 COPY_EXISTING ~POTN10.ITM~ ~override~
   PATCH_IF SOURCE_SIZE > 0x71 BEGIN
@@ -680,8 +857,8 @@ BUT_ONLY
 
 BEGIN ~Make Drizzt's Items Unobtainable~
 GROUP ~Hardcore Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee~
-~This component is only for BG:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee eet~
+~This component is only for BG:EE and EET!~
 
 COPY_EXISTING ~drizzt.cre~ ~override~
   READ_LONG 0x02BC "itemsOffset"
@@ -694,21 +871,34 @@ COPY_EXISTING ~drizzt.cre~ ~override~
 
 BEGIN ~Make Korax the Ghoul Turn Hostile if Injured~
 GROUP ~Hardcore Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee~
-~This component is only for BG:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee eet~
+~This component is only for BG:EE and EET!~
 
 INCLUDE ~jptweaks/lib/jp#_replace_in_script.tpa~
 LAF jp#_replace_in_script STR_VAR existing_script = ~korax~ old = ~GlobalTimerExpired("KoraxHostile","GLOBAL")~ new = ~OR(2) GlobalTimerExpired("KoraxHostile","GLOBAL") HPPercentLT(Myself,100)~ END
 
-BEGIN ~Block All Companions from Joining the Party~
+BEGIN ~Companions Stay in the Same Area~
+SUBCOMPONENT ~Block All Companions from Joining the Party~
 GROUP ~Hardcore Tweaks~
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~
-~This component is only for BG:EE and BG2:EE!~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
 
   COPY_EXISTING_REGEXP GLOB ~^.+\.dlg$~ ~override~
     DECOMPILE_AND_PATCH
     BEGIN
-      //REPLACE_TEXTUALLY ~JoinParty()~ ~EscapeArea()~
-      REPLACE_TEXTUALLY ~JoinParty()~ ~NoAction()~
+      REPLACE_TEXTUALLY ~JoinParty()~ ~RandomWalk()~
+    END
+  BUT_ONLY
+
+BEGIN ~Companions Escape the Area~
+SUBCOMPONENT ~Block All Companions from Joining the Party~
+GROUP ~Hardcore Tweaks~
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~
+~This component is only for BG(2):EE and EET!~
+
+  COPY_EXISTING_REGEXP GLOB ~^.+\.dlg$~ ~override~
+    DECOMPILE_AND_PATCH
+    BEGIN
+      REPLACE_TEXTUALLY ~JoinParty()~ ~EscapeArea()~
     END
   BUT_ONLY

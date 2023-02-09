@@ -1,22 +1,20 @@
 # Difficulty Tweaks
 JP's BG:EE Difficulty Tweaks
 
-This mod is aimed at experienced players who want some extra challenge during a BG(2):EE playthrough. The idea is to promote adventuring by making resources in stores scarcer/more expensive. Additionally some extra tweaks are included for the more diehard players.
+This mod is aimed at experienced players who want some extra challenge during a BG(2):EE or EET playthrough. The idea is to promote adventuring by making resources in stores scarcer/more expensive. Additionally some extra tweaks are included for the more diehard players.
 
 **Version History**
 - v0.1: Initial version.
 - v0.2: Added 2 Hardcore tweaks: "Remove all Items from Stores" and "Make Korax the Ghoul Turn Hostile if Injured".
 - v0.3: Added full support for the SOD campaign. Replaced the "Remove All Joinable NPC's from the Game" tweak with the less intrusive "Block All Companions from Joining the Party" tweak.
 - v0.4: Added support for BG2:EE. The "No Recharging of Items with Limited Charges" tweak is now made dynamic instead of using a fixed list of items. The "No Wild Camping" now has an additional option "No Wild Camping in Dungeons".
+- v0.5: Added support for EET. Added the "Increase Price of Services and Drinks" and "Increase Inn Room Price" tweaks to Store Tweaks. Added an extra option to the "Block All Companions from Joining the Party" tweak.
 
 **Installation**
-Copy the contents of the zip folder to your Baldur's Gate Enhanced Edition folder. Run setup-jptweaks.exe to install via WEIDU. Make sure to first install the SOD DLC-Merger.
+Copy the contents of the zip folder to your Baldur's Gate (II) Enhanced Edition folder. Run setup-jptweaks.exe to install via WEIDU. Make sure to first install the SOD DLC-Merger for BG:EE.
 
 **Compatibility**
-This mod is intended for BG(2):EE v2.6.6. In general it will be compatible with most mods. It is recommended to install this mod as late as possible, especially after installing any mods that alters item placing and/or store inventories (like the Item Randomiser mod).
-
-**Notes**
-This mod now covers BG:EE with the SOD campaign and BG2:EE.
+This mod is intended for BG(2):EE v2.6.6 or EET v13.4. In general it will be compatible with most mods. It is recommended to install this mod as late as possible, especially after installing any mods that alters item placing and/or store inventories (like the Item Randomiser mod).
 
 ## Store Tweaks
 
@@ -70,6 +68,20 @@ This component has 3 options:
 - Increase by 100%
 - Increase by 200%
 
+### Increase Price of Services and Drinks
+Increases the price of services (including identifying) and drinks offered in stores, temples and inns.
+This component has 3 options:
+- Increase by 50%
+- Increase by 100%
+- Increase by 200%
+
+### Increase Inn Room Price
+Increases the price of a room in an inn.
+This component has 3 options:
+- Increase by factor 10
+- Increase by factor 50
+- Increase by factor 100
+
 ## Hardcore Tweaks
 
 ### Remove All Items from Stores
@@ -93,12 +105,15 @@ This component has 2 options:
 ### Make Potions of Invisibility and the Sandthief's Ring Limited to Thiefs
 The get out of trouble free cards for practically all classes. This component limits their availability to Thiefs (single, dual and multi class) only.
 
-### Make Drizzt's Items Unobtainable (BG:EE only)
+### Make Drizzt's Items Unobtainable (BG:EE and EET only)
 Drizzt is carrying some high-end equipment which can be obtained pretty much from the start of the game. This component flags his equipment as not stealable and undroppable, making it unobtainable.
 
-### Make Korax the Ghoul Turn Hostile if Injured (BG:EE only)
+### Make Korax the Ghoul Turn Hostile if Injured (BG:EE and EET only)
 Korax is a bit too friendly, willing to die for charname he just met. This component makes him turn hostile if he is injured in any way.
 
 ### Block All Companions from Joining the Party
 This component blocks all companions from joining the party, forcing charname to save the Sword Coast by himself/herself.
 Companions added by other mods will also be blocked from joining the party. Note that the dialogue options for making them join are still in place, they just won't trigger the join action.
+This component has 2 options:
+- Companions stay in the same area
+- Companions leave the area
